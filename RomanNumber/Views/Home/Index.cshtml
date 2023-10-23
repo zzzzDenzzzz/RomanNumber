@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Converter";
+}
+
+<h2>Convert to Roman</h2>
+
+<div>
+    <form asp-action="ConvertToRoman" asp-controller="Home" method="get" class="input-group mb-3">
+        <input required name="number" type="number" class="form-control" placeholder="Number" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Convert</button>
+    </form>
+</div>
+
+@if (ViewBag.RomanNumber != null)
+{
+    <div class="border border-3 border-success py-2 bg-light">
+        <label for="resul" class="mx-3">Roman number:</label>
+        <span id="result">@ViewBag.RomanNumber</span>
+    </div>
+}
